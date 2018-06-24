@@ -1,5 +1,6 @@
 # TODOs
-Simple CRUD Operations on TODOs and Users
+Simple CRUD Operations on TODOs and Users using `Laravel 5.4` with `PHP 5.6`
+  
 
 **Register**
 ----
