@@ -19,7 +19,8 @@ Simple CRUD Operations on TODOs and Users
  
    `name=[string]`
    `email=[email]`
-   `password=[string]`
+   `password=[string|min 6 characters]`
+   `password_confirmation=[string]`
 
 * **Success Response:**
 
