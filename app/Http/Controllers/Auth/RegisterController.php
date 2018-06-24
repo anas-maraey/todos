@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Symfony\Component\HttpFoundation\Request;
 
 class RegisterController extends Controller
 {
@@ -67,5 +68,27 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * Override register method in RegisterUsers Class
+     * in case of Successful registration the response will contain user_name and token
+     */
+
+    public function register(Request $request)
+    {
+
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            return response()->json(['Message' => $validator->getMessageBag()], 400);
+        }
+
+        $user = $this->create($request->all());
+
+        $response['token'] = $user->createToken('Registeration')->accessToken;
+
+        $response['user_name'] =  $user->name;
+
+        return response()->json(['success' => $response], 201);
     }
 }

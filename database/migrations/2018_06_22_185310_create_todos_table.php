@@ -13,7 +13,14 @@ class CreateTodosTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('todos', function(Blueprint $table){
+            $table->increments('id');
+            $table->string('title');
+            $table->boolean('done')->default(0);
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class CreateTodosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('todos');
     }
 }
