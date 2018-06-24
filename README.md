@@ -5,7 +5,7 @@ Simple CRUD Operations on TODOs and Users
 ----
   Creates a new user and returns json data about the newly created user.
 
-* **URL**
+* **URL:**
 
   /api/register
 
@@ -13,9 +13,9 @@ Simple CRUD Operations on TODOs and Users
 
   `POST`
 
-*  **URL Params**
+*  **URL Params:**
 
-  None
+    None
   
 * **Data Params**
 
@@ -38,11 +38,12 @@ Simple CRUD Operations on TODOs and Users
 
   ```
   
-  **Login**
+
+**Login**
 ----
   Returns token for the authenticated user.
 
-* **URL**
+* **URL:**
 
   /api/login
 
@@ -50,11 +51,11 @@ Simple CRUD Operations on TODOs and Users
 
   `POST`
   
-*  **URL Params**
+*  **URL Params:**
 
-  None
+    None
 
-* **Data Params**
+* **Data Params:**
 
    **Required:**
  
